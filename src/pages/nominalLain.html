@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>ATM - Masukan Kartu</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#324154] px-28 py-10 h-[100vh] flex items-center">
+	<div class="container bg-[#597298] rounded-lg flex items-center">
+		<div
+			class="heading w-8/12 text-white  text-3xl font-mono px-10 gap-12">
+			<h1 class="text-center mb-[20px]">Pilih Jumlah Nominal </h1>
+      <div class="flex gap-[9px]">
+        <input type="text" class="w-[200px] text-black rounded-lg" id="nominalLain">
+        <p onclick="klik()" class="text-green-300">ENTER >></p>
+        <p class="text-red-300"><a href="./nominal.html">CANCEL >></a> </p>
+      </div>
+      <h1 class="text-center mt-[20px]">Hanya Pecahan 100.000 dan 50.000</h1>
+      </div>
+      <div class="w-[60%]">
+        <img src="../images/masukan-pin.jpg" >
+       </div>
+	</div>
+  <script>
+    const nominalLain = document.getElementById('nominalLain')
+    const saldo = 5000000
+    const klik = () => {
+    if (nominalLain.value.length > 0) {
+      if (nominalLain.value % 50000 == 0) {
+        if (nominalLain.value > saldo) {
+          alert('saldo tidak cukup')
+        } else {
+          alert(saldo-nominalLain.value)
+        }
+      } else {
+        alert('masukan saldo dengan benar')
+      }
+    } else {
+      alert('saldo tidak boleh kosong')
+    }
+      
+    }
+    
+
+  </script>
+</body>
+
+</html>
